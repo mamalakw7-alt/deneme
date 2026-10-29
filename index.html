@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pratik</title>
+    <style>
+        body{background-color:white;}
+        h1{color:red;}
+
+        .yesilbuton{background-color:green;color:white;transition:0.5s;}
+
+        .yesilbuton:hover{background-color:darkred;cursor:pointer;}
+
+        .urunlistesi{display:flex;
+        gap:15px;
+        justify-content:space-between;}
+
+        .kutu{width:250px
+        ;height:250px
+        ;background-color:lightgray
+        ;border:5px solid black
+        ;padding:20px;}
+
+        .kutu img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h2>muhammetin vitrini</h2>
+    <h1>asagıda urunlerimiz yer almakta.</h1>
+    <h2>bilgisayar, telefon, mouse,klavye</h2>
+    <div class="urunlistesi">
+        <div class="kutu"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="bilgisayar"><h3>bigisayar</h3><p>fiyat:50000tl</p><button>Sepete Ekle</button></div>
+        <div class="kutu"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="telefon"><h3>telefon</h3><p>fiyat:10000tl</p><button>Sepete Ekle</button></div>
+        <div class="kutu"><img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" alt="mouse"><h3>mouse</h3><p>fiyat:1000tl</p><button>Sepete Ekle</button></div>
+        <div class="kutu"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3" alt="klavye"><h3>klavye</h3><p>fiyat:500tl</p><button>Sepete Ekle</button></div>
+    </div>
+    <form><input type="text" placeholder="ne arican"><button type="submit">Ara</button></form>
+    <button class="yesilbuton"> <a href="https://github.com" target="_blank">githubim</a></button>
+</body>
+</html>
