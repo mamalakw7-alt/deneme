@@ -5,41 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pratik</title>
     <style>
-        body{background-color:white;}
-        h1{color:red;}
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 80px 40px 40px 40px;
+        }
 
-        .yesilbuton{background-color:green;color:white;transition:0.5s;}
+        .yesilbuton {
+            background-color: green;
+            color: white;
+            transition: 0.5s;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
 
-        .yesilbuton:hover{background-color:darkred;cursor:pointer;}
+        .yesilbuton a {
+            color: white;
+            text-decoration: none;
+        }
 
-        .urunlistesi{display:flex;
-        gap:15px;
-        justify-content:space-between;}
+        .yesilbuton:hover {
+            background-color: darkred;
+            cursor: pointer;
+        }
 
-        .kutu{width:250px
-        ;height:250px
-        ;background-color:lightgray
-        ;border:5px solid black
-        ;padding:20px;}
+        .urunlistesi {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
 
+        /* Ana Kutu */
+        .kutu {
+            position: relative;
+            width: 250px;
+            height: 340px; 
+            background-color: goldenrod;
+            border: 5px solid black;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        /* 1. BAŞLIK: En üstte kalacak şekilde hizalandı */
+        .kutu h3 {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* 2. RESİM: Başlığın hemen altına (top: 40px) yerleşti, yüksekliği ayarlandı */
         .kutu img {
-            width: 100%;
-            height: 150px;
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            width: calc(100% - 30px); /* Kutunun 15px'lik iç boşluğuna tam uyum sağlar */
+            height: 180px;
             object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* 3. FİYAT: Sol alt köşe */
+        .kutu p {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            margin: 0;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* 4. BUTON: Sağ alt köşe */
+        .kutu button {
+            position: absolute;
+            bottom: 12px;
+            right: 15px;
+            padding: 6px 12px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .kutu button:hover {
+            background-color: #f39c12;
         }
     </style>
 </head>
 <body>
-    <h2>muhammetin vitrini</h2>
-    <h1>asagıda urunlerimiz yer almakta.</h1>
-    <h2>bilgisayar, telefon, mouse,klavye</h2>
+
+    <!-- Üst Sabit Başlık -->
+    <h1 style="position: fixed; top: 0; left: 20px; background: white; margin: 0; padding: 10px; z-index: 1000;">
+        <span style="color: blue;">Y</span> magazası
+    </h1>
+
+    <h2>magazamızda bulunan ürünler: bilgisayar, telefon, mouse, klavye</h2>
+
+    <!-- Ürün Listesi Kutuları -->
     <div class="urunlistesi">
-        <div class="kutu"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="bilgisayar"><h3>bigisayar</h3><p>fiyat:50000tl</p><button>Sepete Ekle</button></div>
-        <div class="kutu"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="telefon"><h3>telefon</h3><p>fiyat:10000tl</p><button>Sepete Ekle</button></div>
-        <div class="kutu"><img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" alt="mouse"><h3>mouse</h3><p>fiyat:1000tl</p><button>Sepete Ekle</button></div>
-        <div class="kutu"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3" alt="klavye"><h3>klavye</h3><p>fiyat:500tl</p><button>Sepete Ekle</button></div>
+        
+        <div class="kutu">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="bilgisayar">
+            <h3>bilgisayar</h3>
+            <p>₺50000.0</p>
+            <button>Sepete Ekle</button>
+        </div>
+
+        <div class="kutu">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="telefon">
+            <h3>telefon</h3>
+            <p>₺10000.0</p>
+            <button>Sepete Ekle</button>
+        </div>
+
+        <div class="kutu">
+            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" alt="mouse">
+            <h3>mouse</h3>
+            <p>₺1000.0</p>
+            <button>Sepete Ekle</button>
+        </div>
+
+        <div class="kutu">
+            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3" alt="klavye">
+            <h3>klavye</h3>
+            <p>₺500.0</p>
+            <button>Sepete Ekle</button>
+        </div>
+
     </div>
-    <form><input type="text" placeholder="ne arican"><button type="submit">Ara</button></form>
-    <button class="yesilbuton"> <a href="https://github.com" target="_blank">githubim</a></button>
+
+    <!-- Sağ Üst Sabit Arama Formu -->
+    <form style="position: fixed; top: 20px; right: 20px; z-index: 999; background: white; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        <input type="text" placeholder="ne arican">
+        <button type="submit">Ara</button>
+    </form>
+
+    <!-- Github Butonu -->
+    <button class="yesilbuton">
+        <a href="https://github.com" target="_blank">githubim</a>
+    </button>
+
 </body>
 </html>
